@@ -1,0 +1,38 @@
+@if (tick$ | async; as data) {
+
+    <header>
+        <div class="heart">♥️</div>
+        <h1>С Днем Рождения!</h1>
+        <p>Каждый час в игре появляется новый сундук. Нажмите на него, чтобы открыть и увидеть инструкцию, где спрятан
+            сюрприз!</p>
+        @if (data.openedItems >= cheasts.length) {
+            <p>Ура! Ты открыла все сундуки!</p>
+        } @else if (data.availableToOpen > 0) {
+            <p>Ты можешь открыть <strong>{{ data.availableToOpen }}</strong>
+                сундук@if (data.availableToOpen >= 5) {ов}
+            @else if (data.availableToOpen > 1 && data.availableToOpen < 5) {a}</p>
+        }
+    </header>
+    <h1></h1>
+
+
+    <ul class="chests">
+        @for (cheast of cheasts; track $index) {
+            <li>
+                <div
+                        [class.opened]="cheast.opened"
+                        [class.disabled]="!cheast.opened && data.availableToOpen === 0"
+                        (click)="openCheast(cheast)"
+                        class="content">
+                    <strong class="num">{{ $index + 1 }}</strong>
+                </div>
+                <div class="lock">
+                    <span>🔒</span>
+                    <div class="countdown">
+                        {{data.countDown}}
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+}

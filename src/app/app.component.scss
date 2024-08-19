@@ -1,0 +1,94 @@
+:host {
+  max-width: 380px;
+  margin: 0 auto;
+  display: block;
+}
+
+header {
+  padding: 48px 30px 30px;
+
+  h1 {
+    color: #E95D00;
+    font-size: 32px;
+    padding-bottom: 28px;
+    letter-spacing: -0.2px;
+  }
+}
+
+p {
+  line-height: 22px;
+  letter-spacing: -0.2px;
+  padding-bottom: 10px;
+}
+
+.heart {
+  font-size: 64px;
+  padding-bottom: 32px;
+  font-family: 'Roboto-Regular', sans-serif;
+}
+
+.chests {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 13px;
+
+  li {
+    width: 50%;
+    flex-basis: 50%;
+    position: relative;
+
+    .content {
+      padding-top: 143px;
+      margin-bottom: 33px;
+      background: url('../assets/img/chest.png') 50% 0 no-repeat;
+      background-size: 144px 144px;
+
+      &.opened {
+        background-image: url('../assets/img/chest-open.png');
+      }
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+
+        & + .lock {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .num {
+    display: inline-block;
+    background-color: #FFC240;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    line-height: 40px;
+    font-size: 24px;
+  }
+}
+
+.lock {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  span {
+    font-size: 56px;
+    padding: 30px 0 7px;
+    font-family: 'Roboto-Regular', sans-serif;
+    display: block;
+  }
+  .countdown{
+    display: inline-block;
+    background-color: #95938A;
+    color: #fff;
+    font-family: 'OpenSans-Bold', Arial, sans-serif;
+    font-size: 12px;
+    padding: 4px 7px;
+    border-radius: 12px;
+  }
+}

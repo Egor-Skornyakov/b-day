@@ -1,0 +1,15 @@
+@use 'styles/reset';
+@use 'styles/fonts';
+
+html, body {
+  background-color: #FEFBF3;
+  text-align: center;
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  color: #5A341B;
+  font-size: 16px;
+}
+
+h1, strong {
+  font-family: 'OpenSans-Bold', Arial, sans-serif;
+  font-weight: normal;
+}
