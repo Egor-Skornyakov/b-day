@@ -2,18 +2,28 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {map, merge, Subject, timer} from "rxjs";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  animations: [
+    trigger('openClose', [
+      state('true', style({height: '100%', opacity: '1'})),
+      state('false', style({height: '0px', opacity: '0'})),
+      transition('false <=> true', animate(250)),
+    ]),
+  ],
 })
 export class AppComponent implements OnInit {
 
-  public startDate = new Date('2024-08-20T05:00:00.000Z');
+  // public startDate = new Date('2024-08-20T05:00:00.000Z');
+  public startDate = new Date('2024-08-19T11:00:00.000Z');
   public clickSubject = new Subject();
+  public modalSubject: Subject<any> = new Subject();
 
   public cheasts = [
     {
@@ -85,6 +95,7 @@ export class AppComponent implements OnInit {
     const openedCheastIds = openedCheasts.map((c) => c.id);
     localStorage.setItem('openedCheasts', JSON.stringify(openedCheastIds));
     this.clickSubject.next(null);
+    this.modalSubject.next(cheast);
   }
 
   private calculateAvailable(): number {
