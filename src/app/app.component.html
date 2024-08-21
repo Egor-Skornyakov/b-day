@@ -3,8 +3,7 @@
     <header>
         <div class="heart">♥️</div>
         <h1>С Днем Рождения!</h1>
-        <p>Каждый час в игре появляется новый сундук. Нажмите на него, чтобы открыть и увидеть инструкцию, где спрятан
-            сюрприз!</p>
+        <p>Каждый час ты можешь открыть любой новый сундук. Нажми на него, чтобы открыть и увидеть инструкцию, где спрятан сюрприз!</p>
         @if (data.openedItems >= cheasts.length) {
             <p>Ура! Ты открыла все сундуки!</p>
         } @else if (data.availableToOpen > 0) {
@@ -41,25 +40,8 @@
                 <div>
                     <div class="white">
                         <strong class="num big">{{ cheast?.id }}</strong>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Aenean at enim in ante sodales mollis.
-                            Praesent ut leo non eros tristique suscipit.
-                            Nunc non felis tempor, lobortis massa quis, fringilla justo.
-                            Proin tempus augue eu magna mattis ullamcorper.
-                            Etiam dignissim libero pretium metus rhoncus, id aliquet dui efficitur.
-                            Aenean in ligula a tortor ultrices consectetur.
-                            Fusce in quam id nunc fringilla convallis.
-                            Donec fermentum orci non porta tincidunt.
-                            Phasellus interdum est ac nisl dictum, id pharetra lorem tincidunt.
-                            Cras euismod sapien vel dolor hendrerit, nec imperdiet nisi pellentesque.
-                            Mauris a mauris a nisi lobortis lobortis et et sapien.
-                            Vestibulum quis turpis in orci venenatis condimentum.
-                            Vivamus in eros ut elit dignissim porttitor eu ac dui.
-                            Nunc gravida magna nec felis pretium mattis.
-                            Aenean sit amet sapien et dolor pellentesque vehicula id non lectus.
-                            Sed sollicitudin sapien sit amet erat rutrum condimentum.
-                            Donec elementum ante ac feugiat ullamcorper.</p>
-
+                        <h1>Подарочек от {{ cheast?.title }}</h1>
+                        <p>{{ cheast?.text }}</p>
                     </div>
                 </div>
             }

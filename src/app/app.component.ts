@@ -20,7 +20,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class AppComponent implements OnInit {
 
-  // public startDate = new Date('2024-08-20T05:00:00.000Z');
+  // public startDate = new Date('2024-09-07T05:00:00.000Z');
   public startDate = new Date('2024-08-19T11:00:00.000Z');
   public clickSubject = new Subject();
   public modalSubject: Subject<any> = new Subject();
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       id: '1',
       opened: false,
       date: this.startDate,
-      title: 'Title 1',
+      title: 'Тимошки',
       text: 'text 1'
     },
     {
